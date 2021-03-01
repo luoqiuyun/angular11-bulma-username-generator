@@ -1,0 +1,16 @@
+.app-status {
+  display: normal;
+  color: white;
+}
+.title {
+  margin-top: 10px;
+}
+.input {
+  margin-top: 10px;
+}
+.button {
+  margin-top: 25px;
+}
+.columns {
+  margin-top: 50px;
+}

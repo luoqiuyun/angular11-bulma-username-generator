@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Username Generator</h1>
+      <div class="field">
+        <label>Select Desired Username Length (3 - 15)</label>
+        <input type="number" class="input" min="3" max="15"
+          (input)="onLengthChange($event)" />
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onLettersChange()" type="checkbox" />
+            Use Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onNumbersChange()" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onSymbolsChange()" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
+
+      <button [disabled]="
+          !(length > 2 && length < 16 && (includeLetters || includeSymbols || includeNumbers))
+        " (click)="onButtonClick()"
+        class="button is-link is-fullwidth">
+        Generate Username !
+      </button>
+
+      <div class="box" *ngIf="username">
+        <label>Generated Username:</label>
+        <input class="input" [value]="username" />
+      </div>
+
+      <div class="content">
+        <span class="app-status">{{ title }} app is running!</span>
+      </div>
+    </div>
+  </div>
+</div>
